@@ -10,3 +10,14 @@
 #	- Search how to read JSON file
 #	- You will create the JSON file manually
 #	- Your code should be in github before Feb12
+
+import time
+import json
+from colorama import Fore, Back, Style
+
+def program_intro():
+    print ("Hello!")
+    time.sleep (1.5)
+    print ("Welcome to PDF Resume Creator.")
+
+program_intro()
