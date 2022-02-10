@@ -28,14 +28,14 @@ def getfile():
     output = input ("Enter your desired file name here (Note: Please add .pdf after naming it):")
     jsontopdf(jsonfile,output)
 
-
 def jsontopdf(json_file, outputname):
     pdf = FPDF ()
     pdf.add_page()
     pdf.set_font ("Arial", size = 12)
     resume = open (json_file)
-    for r in resume:
-        pdf.cell (200, 10, txt = r, ln = 1, align = 'L')
+    lines = resume.readlines()
+    for l in lines:
+        pdf.cell (200, 10, txt = l, ln = 1, align = 'L')
     pdf.output (outputname)
 
 def main():
