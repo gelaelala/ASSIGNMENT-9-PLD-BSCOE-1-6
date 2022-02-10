@@ -14,10 +14,31 @@
 import time
 import json
 from colorama import Fore, Back, Style
+from fpdf import FPDF
 
 def program_intro():
     print ("Hello!")
-    time.sleep (1.5)
+    time.sleep (2)
     print ("Welcome to PDF Resume Creator.")
+    time.sleep (2)
+    getfile()
 
-program_intro()
+def getfile():
+    jsonfile = input("Enter JSON file here:")
+    output = input ("Enter your desired file name here (Note: Please add .pdf after naming it):")
+    jsontopdf(jsonfile,output)
+
+
+def jsontopdf(json_file, outputname):
+    pdf = FPDF ()
+    pdf.add_page()
+    pdf.set_font ("Arial", size = 12)
+    resume = open (json_file)
+    for r in resume:
+        pdf.cell (200, 10, txt = r, ln = 1, align = 'L')
+    pdf.output (outputname)
+
+def main():
+    program_intro()
+
+main()
