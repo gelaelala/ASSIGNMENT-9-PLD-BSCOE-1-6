@@ -26,7 +26,7 @@ def pageintroduction ():
     resumepdf.image ('ID PICTURE.png', 180, 10, 25)
     resumepdf.line (10, 40, 210, 40)
     resumepdf.set_line_width (1.5)
-    resumepdf.ln (20)
+    resumepdf.ln (10)
 
 def resumedata ():
     resumepdf.ln (5)
@@ -72,12 +72,12 @@ def resumedata ():
     resumepdf.cell (50, 10, "Photo Editing                      " +str(data["Skills"]["Photo Editing"]), ln = 10)
     resumepdf.ln (5)
     resumepdf.set_font ('Arial', 'B', 20)
-    resumepdf.cell (30, 10, 'Awards and Achivements', ln = 15, align = 'L')
+    resumepdf.cell (30, 10, 'Awards and Achievements', ln = 15, align = 'L')
     resumepdf.ln(3)
     resumepdf.set_font ('Arial', '', 12)
-    resumepdf.cell (50, 10, str(data["Awards and Achivements"]["a"]), ln = 10)
-    resumepdf.cell (50, 10, str(data["Awards and Achivements"]["b"]), ln = 10)
-    resumepdf.cell (50, 10, str(data["Awards and Achivements"]["c"]), ln = 10)
+    resumepdf.cell (50, 10, str(data["Awards and Achievements"]["a"]), ln = 10)
+    resumepdf.cell (50, 10, str(data["Awards and Achievements"]["b"]), ln = 10)
+    resumepdf.cell (50, 10, str(data["Awards and Achievements"]["c"]), ln = 10)
     
 def main ():
     pageintroduction()
