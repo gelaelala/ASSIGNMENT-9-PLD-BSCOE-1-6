@@ -83,8 +83,16 @@ def resumedata ():
     resumepdf.ln(2)
     resumepdf.set_font ('Times', '', 12)
     resumepdf.cell (50, 8, str(data["Awards and Achievements"]["a"]), ln = 10)
+    resumepdf.set_font ('Times', 'I', 10)
+    resumepdf.cell (50, 8, str(data["Awards and Achievements"]["year (a)"]), ln = 3)
+    resumepdf.set_font ('Times', '', 12)
     resumepdf.cell (50, 8, str(data["Awards and Achievements"]["b"]), ln = 10)
+    resumepdf.set_font ('Times', 'I', 10)
+    resumepdf.cell (50, 8, str(data["Awards and Achievements"]["year (b)"]), ln = 3)
+    resumepdf.set_font ('Times', '', 12)
     resumepdf.cell (50, 8, str(data["Awards and Achievements"]["c"]), ln = 10)
+    resumepdf.set_font ('Times', 'I', 10)
+    resumepdf.cell (50, 8, str(data["Awards and Achievements"]["info (c)"]), ln = 3)
     
 def main ():
     pageintroduction()
