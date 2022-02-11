@@ -13,55 +13,35 @@
 
 import time
 import json
-from colorama import Fore, Back, Style
 from fpdf import FPDF
 
-def program_intro():
-    print ("Hello!")
-    time.sleep (2)
-    print ("Welcome to PDF Resume Creator.")
-    time.sleep (2)
-    print ("Here are the guidelines on how to use the program:")
-    time.sleep (1.5)
-    print ("      1. Enter the name of the file that needs to be converted (must be in json format)      ")
-    time.sleep (2)
-    print ("      2. Enter the details needed by the program such as:      ")
-    time.sleep (1.5)
-    print ("         - Font name to be used (Arial, Courier, Times)         ")
-    time.sleep (1.5)
-    print ("         - Font size to be used         ")
-    time.sleep (1.5)
-    print ("         - Page layout needed (P for portrait and L for landscape)         ")
-    time.sleep (1.5)
-    print ("         - Page size needed (Letter, Legal, A4, A5)         ")
-    time.sleep (2)
-    print ("      3. Enter the PDF's file name (please add '.pdf' after placing the file name)      ")
-    time. sleep (2)
-    print ("After that, the program will now automatically convert your file into a PDF file.")
-    getfile()
+data = open("resume personal details.json")
+data = json.load("resume personal details.json")
+resumepdf = FPDF('P', 'mm', "Legal")
+resumepdf.add_page()
 
-def getfile():
-    jsonfile = input("Enter JSON file here:")
-    layout = input("Enter desired layout for file (type P for portrait and L for landscape):")
-    pageformat = input("Enter desired page size here:")
-    fontname = input("Enter font name to be used:")
-    fontsize = int(input("Enter font size to be used:"))
-    output = input ("Enter your desired file name here (Note: Please add .pdf after naming it):")
-    jsontopdf(jsonfile, layout, pageformat, fontname, fontsize, output)
+def pageintroduction ():
+    resumepdf.set_font ('Arial', 30)
+    resumepdf.cell (0, 10, 'Personal Resume', ln = 10, align = 'C')
+    resumepdf.image ('ID PICTURE.png', 150, 10, 30)
+    resumepdf.ln (10)
 
-def jsontopdf(json_file, layout_, page_format, fontname_, fontsize_, outputname):
-    resume = open (json_file)
-    resume = json.load(resume)
-    resume = json.dumps(resume)
-    lines = resume.split (',')
-    pdf = FPDF (layout_, 'mm', page_format)
-    pdf.add_page()
-    pdf.set_font (fontname_, size = fontsize_)
-    for l in lines:
-        pdf.cell (200, 10, txt = l, ln = 1, align = 'L')
-    pdf.output (outputname)
+def resumedata ():
+    resumepdf.set_font ('Arial', 20)
+    resumepdf.cell (30, 10, 'Personal Information', ln = 10, align = 'L')
+    resumepdf.ln(10)
+    resumepdf.set_font ('Arial', 16)
+    resumepdf.cell (50, 10, "Name:                " +str(data["Personal Profile"]["Name"]), ln = 10)
+    resumepdf.cell (50, 10, "Name:                " +str(data["Personal Profile"]["Gender"]), ln = 10)
+    resumepdf.cell (50, 10, "Name:                " +str(data["Personal Profile"]["Age"]), ln = 10)
+    resumepdf.cell (50, 10, "Name:                " +str(data["Personal Profile"]["Birthday"]), ln = 10)
+    resumepdf.cell (50, 10, "Name:                " +str(data["Personal Profile"]["Nationality"]), ln = 10)
+    resumepdf.cell (50, 10, "Name:                " +str(data["Personal Profile"]["Address"]), ln = 10)
+    resumepdf.ln(10)
 
-def main():
-    program_intro()
+def main ():
+    pageintroduction()
+    resumedata()
+    resumepdf.output ('CORPUZ_ANGELA.pdf')
 
 main()
