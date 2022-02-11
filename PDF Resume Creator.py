@@ -25,17 +25,19 @@ def program_intro():
 
 def getfile():
     jsonfile = input("Enter JSON file here:")
+    layout = input("Enter desired layout for file (type P for portrait and L for landscape):")
+    pageformat = input("Enter desired page size here:")
     fontname = input("Enter font name to be used:")
     fontsize = int(input("Enter font size to be used:"))
     output = input ("Enter your desired file name here (Note: Please add .pdf after naming it):")
-    jsontopdf(jsonfile,fontname, fontsize, output)
+    jsontopdf(jsonfile, layout, pageformat, fontname, fontsize, output)
 
-def jsontopdf(json_file, fontname_, fontsize_, outputname):
+def jsontopdf(json_file, layout_, page_format, fontname_, fontsize_, outputname):
     resume = open (json_file)
     resume = json.load(resume)
     resume = json.dumps(resume)
     lines = resume.split (',')
-    pdf = FPDF ()
+    pdf = FPDF (layout_, 'mm', page_format)
     pdf.add_page()
     pdf.set_font (fontname_, size = fontsize_)
     for l in lines:
