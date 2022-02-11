@@ -1,0 +1,37 @@
+{
+    "Header Information":{
+        "Name": "Angela Escario Corpuz",
+        "Address": "180 Finwood Road, Lyndhurst, New Jersey ",
+        "Phone Number": "09123456789",
+        "Email Address": "gelaelala@gmail.com"
+    },
+    "Personal Profile":{
+        "Gender": "Female",
+        "Age": "19",
+        "Birthday": "December 14, 2002",
+        "Nationality": "Filipino",
+        "Height": "5 feet 3 inches",
+        "Weight": "52 kgs."
+    },
+    "Educational Background": {
+            "Elementary": "Blue River Academy",
+            "Year Started and Graduated (elementary)": "(2009 - 2015)",        
+            "High School": "Oak Ridge High School",
+            "Year Started and Graduated Graduated (high school)": "(2015 - 2021)",
+            "College": "Polytechnic University of the Philippines",
+            "Course": "Bachelor of Science in Computer Engineering"
+    },
+    "Work Experience":{
+        "Fujitsu": "Software Engineer",
+        "Unilab Philippines": "Data and Systems Analyst"
+    },
+    "Skills":{
+        "Programming": "Python",
+        "Photo Editing": "Adobe Photoshop"
+    },
+    "Awards and Achievements":{
+        "a": "With High Honors (Grade 7 -  9)",
+        "b": "With High Honors (Grade 10 - 12)",
+        "c": "Divisions School Press Conference (Copyreading and Headline Writing) Participant"
+    }   
+}
