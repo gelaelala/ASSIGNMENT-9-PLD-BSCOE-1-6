@@ -30,8 +30,11 @@
         "Photo Editing": "Adobe Photoshop"
     },
     "Awards and Achievements":{
-        "a": "With High Honors (Grade 7 -  9)",
-        "b": "With High Honors (Grade 10 - 12)",
-        "c": "Divisions School Press Conference (Copyreading and Headline Writing) Participant"
+        "a": "With High Honors",
+        "year (a)": "(Grade 7 -  9)",
+        "b": "With High Honors",
+        "year (b)": "(Grade 10 - 12)",
+        "c": "Divisions School Press Conference (Copyreading and Headline Writing)",
+        "info (c)": "(Participant)"
     }   
 }
