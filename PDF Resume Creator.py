@@ -63,7 +63,13 @@ def resumedata ():
     resumepdf.set_font ('Arial', '', 12)
     resumepdf.cell (50, 10, "Fujitsu                                 " +str(data["Work Experience"]["Fujitsu"]), ln = 10)
     resumepdf.cell (50, 10, "Unilab Philippines               " +str(data["Work Experience"]["Unilab Philippines"]), ln = 10)
-    
+    resumepdf.ln (5)
+    resumepdf.set_font ('Arial', 'B', 20)
+    resumepdf.cell (30, 10, 'Skills', ln = 15, align = 'L')
+    resumepdf.ln(5)
+    resumepdf.set_font ('Arial', '', 12)
+    resumepdf.cell (50, 10, "Programming                      " +str(data["Skills"]["Programming"]), ln = 10)
+    resumepdf.cell (50, 10, "Photo Editing                      " +str(data["Skills"]["Photo Editing"]), ln = 10)
    
     
 def main ():
